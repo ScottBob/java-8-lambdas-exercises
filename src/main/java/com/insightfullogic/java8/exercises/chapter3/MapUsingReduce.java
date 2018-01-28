@@ -13,7 +13,10 @@ import java.util.stream.Stream;
 public class MapUsingReduce {
 
     public static <I, O> List<O> map(Stream<I> stream, Function<I, O> mapper) {
-        return Exercises.replaceThisWithSolution();
+//        stream.reduce(null, mapper)
+//                .asList();
+//        return Exercises.replaceThisWithSolution();
+        return null;
     }
 
 }
