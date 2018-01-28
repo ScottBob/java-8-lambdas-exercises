@@ -32,6 +32,18 @@ public Set<String> findLongTracks(List<Album> albums) {
 // END findLongTracks_0
     }
 
+    public static class MyStep1 implements LongTrackFinder {
+
+        @Override
+        public Set<String> findLongTracks(List<Album> albums) {
+            return albums.stream()
+                    .flatMap(album -> album.getTracks())
+                    .filter(track -> track.getLength() > 60)
+                    .map(track -> track.getName())
+                    .collect(toSet());
+        }
+    }
+
     public static class Step1 implements LongTrackFinder {
 // BEGIN findLongTracks_1
 public Set<String> findLongTracks(List<Album> albums) {
